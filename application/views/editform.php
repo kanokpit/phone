@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </head>
 	<body>
-<?php echo form_open('/welcome/update');?>
+<?php echo form_open('/hello/update');?>
 id<br>
 	<input type="text" name="id" value="<?php echo $data[0] ['id']?>"readonly>
 	<br>
