@@ -58,11 +58,11 @@ public function loadpage($value){
 	{
 		$id=$this->uri->segment(3);
 		$query=$this->modelphone->read_one($id);
-		$pr=$this->modelphone->read_province();
+		$br=$this->modelphone->read_phone();
 		$value=array(
 			'result' => array(
 			'data' => $query,
-			'brand'=>$pr
+			'brand'=>$br
 		),
 		'view'=>'editform'
 		);
