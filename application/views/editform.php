@@ -6,61 +6,33 @@
 								<div class="alert alert-info">
 
 									<table class="table table-striped">
-								  <thead>
-								    <tr>
-								      <th>id_drand</th>
-								      <th>name</th>
-								      <th>price</th>
-                      <th>numder</th>
-								    </tr>
-								  </thead>
-								  <tbody>
-										<?php foreach ($data as $key):?>
-								    <tr>
-								      <td> <?php echo $key['id_brand'] ?>
-                      <select name="id_brand">
-                            <<?php foreach ($province as $key): ?>
-                              <?php if ($key['id_brand']==$data[0]['id_brand']): ?>
-                              <option selected value='<?php echo $key['id_brand']?>' ><?php echo $key['name']?></option>
+										<body>
+											<?php echo form_open('hello/update'); ?>
+										<h2>แก้ไขข้อมูล</h2><br><br>
 
-                            <?php else: ?>
-                              <option value='<?php echo $key['id_brand']?>' ><?php echo $key['name']?></option>
+											<input type="hidden" name='p_id' value="<?php echo $data[0]['id_phone'] ?>"><br>
+											Name:<br>
+											<select name="id_brand">
+												<<?php foreach ($brand as $key): ?>
+													<?php if ($key['id_brand']==$data[0]['id_brand']): ?>
+													<option selected value='<?php echo $key['id_brand']?>' ><?php echo $key['name']?></option>
 
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                          </select></td>
-								      <td>	<?php echo $key['price'] ?></td>
-                      <td>	<?php echo $key['numder'] ?></td>
-											<td><a href="<?php echo site_url('hello/editform/'.$key['id']) ?>"class="btn btn-info">แก้ไข</a>  <a href="<?php echo site_url('welcome/del/'.$key['id']) ?>"class="btn btn-info">ลบ</a><br></td>
+												<?php else: ?>
+													<option value='<?php echo $key['id_brand']?>' ><?php echo $key['name']?></option>
 
-								    </tr>
-										<?php endforeach; ?>
-								  </tbody>
-								</table>
+												<?php endif; ?>
+												<?php endforeach; ?>
+												</select>
+											<br>
+											Price:<br>
+											<input type="text" name='p_lastname' value="<?php echo $data[0]['price'] ?>">
+											<br>
+											Number:<br>
+											<input type="text" name='IDcard' value="<?php echo $data[0]['number'] ?>">
+											<br>
+											<br>
+											<input type="submit" value="submit">
+
+											<?php echo form_close(); ?>
+										</body>
 						</div>
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
-</head>
-	<body>
-<?php echo form_open('/hello/update');?>
-id<br>
-	<input type="text" name="id" value="<?php echo $data[0] ['id']?>"readonly>
-	<br>
-	Name<br>
-		<input type="text" name="name" value="<?php echo $data[0] ['name']?>">
-		<br>
-		NickName<br>
-			<input type="text" name="nickname" value="<?php echo$data[0] ['nickname']?>">
-			<br>
-
-			<input type="submit" value="submit">
-
-	<?php echo form_close(); ?>
-</body>
-</html>
