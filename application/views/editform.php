@@ -10,7 +10,7 @@
 											<?php echo form_open('hello/update'); ?>
 										<h2>แก้ไขข้อมูล</h2><br><br>
 
-											<input type="hidden" name='p_id' value="<?php echo $data[0]['id_phone'] ?>"><br>
+											<input type="hidden" name='id_phone' value="<?php echo $data[0]['id_phone'] ?>"><br>
 											Name:<br>
 											<select name="id_brand">
 												<<?php foreach ($brand as $key): ?>
