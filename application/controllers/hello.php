@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class template extends CI_Controller {
+class hello extends CI_Controller {
 
 public function loadpage($value){
-	$this->load->view('templates/font/header');
-	$this->load->view('templates/font/sidebar');
+	// $this->load->view('template/font/header');
+	// $this->load->view('template/font/sidebar');
 	$this->load->view($value['view'],$value['result']);
-	$this->load->view('templates/font/footer');
+	// $this->load->view('template/font/footer');
 
 }
 
@@ -18,7 +18,7 @@ public function loadpage($value){
 			'result' => array(
 				'data' => $query
 			),
-			'view'=>'phone'
+			'view'=>'torasab'
 		);
 	$this->loadpage($value);
 	}
@@ -58,7 +58,7 @@ public function loadpage($value){
 	{
 		$id=$this->uri->segment(3);
 		$query=$this->modelphone->read_one($id);
-		$br=$this->modelphone->read_phone();
+		$br=$this->modelphone->read_brand();
 		$value=array(
 			'result' => array(
 			'data' => $query,

@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class modeltemplate extends CI_Model {
+class modelphone extends CI_Model {
 
 	public function connectdb()
 	{
 		$db=$this->db
-		->join('phone','telphone.id_brand = brand.id_brand','left')
+		->join('brand','brand.id_brand = telphone.id_brand','left')
 		->get('telphone')
 		->result_array();
 		return $db;
