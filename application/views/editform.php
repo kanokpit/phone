@@ -25,10 +25,10 @@
 												</select>
 											<br>
 											Price:<br>
-											<input type="text" name='p_lastname' value="<?php echo $data[0]['price'] ?>">
+											<input type="text" name='price' value="<?php echo $data[0]['price'] ?>">
 											<br>
 											Number:<br>
-											<input type="text" name='IDcard' value="<?php echo $data[0]['number'] ?>">
+											<input type="text" name='number' value="<?php echo $data[0]['number'] ?>">
 											<br>
 											<br>
 											<input type="submit" value="submit">
